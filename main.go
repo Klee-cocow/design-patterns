@@ -1,5 +1,7 @@
 package main
 
+import "design-patterns/adapter"
+
 func main() {
 	//单例
 	//instance := singleton.GetInstance()
@@ -21,4 +23,8 @@ func main() {
 	//result := build.GetResult()
 	//
 	//fmt.Printf("构建的产品包括: ,%s ,%s ,%s", result.Party1, result.Party2, result.Party3)
+
+	ukPlug := adapter.UKPlug{}
+	plugAdapter := adapter.UKPlugAdapter{Plug: ukPlug}
+	plugAdapter.InsertChineseSocket()
 }
